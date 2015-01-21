@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html ng-app="quoteBook">
-  <head>
+<head>
   	<title>Quote Book</title>
   	<link rel="stylesheet" href="styles.css" type="text/css">
-  </head>
-  <body ng-controller="mainCtrl">
-  	
-  <div ng-repeat="quote in quotes">
-    <h2>{{quotes.author}}</h2>
-      <p>{{quotes.text}}</p>
-  </div>
+</head>
+<body ng-controller="mainCtrl">
 
+<header>
+    <button class="toggleButton" ng-click="toggle('add')">add</button>
+    <button class="toggleButton" ng-click="toggle('remove')">remove</button>
+    <button class="toggleButton" ng-click="toggle('filter')">filter</button>
 
+	<div class="add" ng-show="focus === 'add'">
+	    <input type="text" ng-model="newQuote" placeholder="quote me"/> 
+	    <input type="text" ng-model="newAuthor" placeholder="who arhcoo?"/>
+	    <button ng-click="addQuote()">Add Quote</button>
+	</div>
 
+    <div class="remove" ng-show="focus === 'remove'">
+        <input type="text" ng-model="removeQ"/>
+        <button ng-click="removeQuote('removeQ')">Remove Quote</button>
+    </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
-  	<script src="js/app.js"></script>
-  	<script src="js/dataService.js"></script>
-  	<script src="js/mainCtrl.js"></script>
-  </body>
+	<div class="filter" ng-show="focus === 'filter'">
+	    <input type="text" ng-model="search" placeholder="search"/>
+	</div>
+</header>
+
+<hr>
+<div ng-repeat="key in quotes | filter: search">
+    <p>{{key.text}}</p>
+    <h5>-{{key.author}}</h5>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/dataService.js"></script>
+<script src="js/mainCtrl.js"></script>
+</body>
 </html>
