@@ -22,7 +22,6 @@ app.service('dataService', function() {
   	}
   };
 
-
   this.removeData = function(str) {
     for (var i = 0; i < quotes.length; i++) {
     	if (quotes[i].text === str) {

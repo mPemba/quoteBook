@@ -1,0 +1,15 @@
+body {
+	font-weight: bold;
+	background-repeat: no-repeat;
+	background: url('http://wallpaperest.com/wallpapers/wooden-background-light_794697.jpg');
+}
+.buttons {
+	text-align: center;
+}
+
+.quoteContainer {
+	text-align: center;
+}
+.quoteContainer:hover {
+	font-style: italic;
+}

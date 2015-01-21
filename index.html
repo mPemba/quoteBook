@@ -6,14 +6,14 @@
 </head>
 <body ng-controller="mainCtrl">
 
-<header>
-    <button class="toggleButton" ng-click="toggle('add')">add</button>
-    <button class="toggleButton" ng-click="toggle('remove')">remove</button>
-    <button class="toggleButton" ng-click="toggle('filter')">filter</button>
+<div class="buttons">
+    <button class="toggleButton" ng-click="toggle('add')">Add</button>
+    <button class="toggleButton" ng-click="toggle('remove')">Remove</button>
+    <button class="toggleButton" ng-click="toggle('filter')">Search</button>
 
-	<div class="add" ng-show="focus === 'add'">
-	    <input type="text" ng-model="newQuote" placeholder="quote me"/> 
-	    <input type="text" ng-model="newAuthor" placeholder="who arhcoo?"/>
+    <div class="add" ng-show="focus === 'add'">
+	    <input type="text" ng-model="newQuote" placeholder="Quote"/> 
+	    <input type="text" ng-model="newAuthor" placeholder="Author"/>
 	    <button ng-click="addQuote()">Add Quote</button>
 	</div>
 
@@ -25,10 +25,10 @@
 	<div class="filter" ng-show="focus === 'filter'">
 	    <input type="text" ng-model="search" placeholder="search"/>
 	</div>
-</header>
+</div>
 
 <hr>
-<div ng-repeat="key in quotes | filter: search">
+<div class="quoteContainer" ng-repeat="key in quotes | filter: search">
     <p>{{key.text}}</p>
     <h5>-{{key.author}}</h5>
 </div>
