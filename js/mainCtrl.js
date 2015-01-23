@@ -14,12 +14,13 @@ app.controller('mainCtrl', function($scope, dataService){
   	$scope.newAuthor = '';
   };
 
-  $scope.removeQuote = function(str) {
-  	$scope.quotes = dataService.removeData(str);
+  $scope.removeQuote = function() {
+  	dataService.removeData($scope.deleteQuote);
+    $scope.deleteQuote = '';
   }
   
   $scope.toggle = function(str) {
   	$scope.focus = str;
   }
-
+  
 });

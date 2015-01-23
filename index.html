@@ -11,20 +11,20 @@
     <button class="toggleButton" ng-click="toggle('remove')">Remove</button>
     <button class="toggleButton" ng-click="toggle('filter')">Search</button>
 
-    <div class="add" ng-show="focus === 'add'">
+    <form class="add" ng-show="focus === 'add'">
 	    <input type="text" ng-model="newQuote" placeholder="Quote"/> 
 	    <input type="text" ng-model="newAuthor" placeholder="Author"/>
 	    <button ng-click="addQuote()">Add Quote</button>
-	</div>
+	</form>
 
-    <div class="remove" ng-show="focus === 'remove'">
-        <input type="text" ng-model="removeQ"/>
-        <button ng-click="removeQuote('removeQ')">Remove Quote</button>
-    </div>
+    <form ng-submit="removeQuote()" class="remove" ng-show="focus === 'remove'">
+        <input type="text" ng-model="deleteQuote"/>
+        <button ng-click="removeData()">Remove Quote</button>
+    </form>
 
-	<div class="filter" ng-show="focus === 'filter'">
+	<form class="filter" ng-show="focus === 'filter'">
 	    <input type="text" ng-model="search" placeholder="search"/>
-	</div>
+	</form>
 </div>
 
 <hr>
