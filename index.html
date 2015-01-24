@@ -7,19 +7,19 @@
 <body ng-controller="mainCtrl">
 
 <div class="buttons">
-    <button class="toggleButton" ng-click="toggle('add')">Add</button>
-    <button class="toggleButton" ng-click="toggle('remove')">Remove</button>
-    <button class="toggleButton" ng-click="toggle('filter')">Search</button>
+    <button class="btn toggleButton" ng-click="toggle('add')">Add</button>
+    <button class="btn toggleButton" ng-click="toggle('remove')">Remove</button>
+    <button class="btn toggleButton" ng-click="toggle('filter')">Search</button>
 
     <form class="add" ng-show="focus === 'add'">
 	    <input type="text" ng-model="newQuote" placeholder="Quote"/> 
 	    <input type="text" ng-model="newAuthor" placeholder="Author"/>
-	    <button ng-click="addQuote()">Add Quote</button>
+	    <button class="btn" ng-click="addQuote()">Add Quote</button>
 	</form>
 
     <form ng-submit="removeQuote()" class="remove" ng-show="focus === 'remove'">
         <input type="text" ng-model="deleteQuote"/>
-        <button ng-click="removeData()">Remove Quote</button>
+        <button class="btn" ng-click="removeData()">Remove Quote</button>
     </form>
 
 	<form class="filter" ng-show="focus === 'filter'">
@@ -28,11 +28,12 @@
 </div>
 
 <hr>
-<div class="quoteContainer" ng-repeat="key in quotes | filter: search">
-    <p>{{key.text}}</p>
-    <h5>-{{key.author}}</h5>
+<div class="transbox">
+    <div class="quoteContainer" ng-repeat="key in quotes | filter: search">
+        <p>{{key.text}}</p>
+        <h5>-{{key.author}}</h5>
+    </div>
 </div>
-
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/dataService.js"></script>

@@ -1,10 +1,17 @@
 body {
 	font-weight: bold;
 	background-repeat: no-repeat;
-	background: url('http://wallpaperest.com/wallpapers/wooden-background-light_794697.jpg');
+	background: url('http://www.travelotibet.com/images/destination/1359274342_0!!-!!Flag%20Bunting%20TIbet.jpg');
 }
 .buttons {
 	text-align: center;
+}
+.transbox {
+	padding: 20px;
+	margin: 50px;
+	text-align: center;
+	background: #fff;
+	opacity: 0.6;
 }
 
 .quoteContainer {
@@ -12,4 +19,14 @@ body {
 }
 .quoteContainer:hover {
 	font-style: italic;
+}
+
+.btn {
+	padding: 5px;
+	font-size: 1.2rem;
+	font-family: sans-serif;
+	font-weight: lighter;
+	background: none;
+	border: 2px solid white;
+	color: white;
 }
